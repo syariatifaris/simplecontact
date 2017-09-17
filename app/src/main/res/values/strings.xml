@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">GojekTest</string>
+    <string name="person_message_loading">Click button to load contacts</string>
+    <string name="name_anchor">A</string>
+    <string name="default_user_full_name">First Last Name</string>
+    <string name="default_user_phone_number">+6281315123964</string>
+    <string name="default_user_mail">syariati.faris@gmail.com</string>
+    <string name="default_phone_type">Mobile</string>
+    <string name="default_mail_type">Home</string>
+
+    <string name="material_star">&#xf27d;</string>
+    <string name="material_phone">&#xf2be;</string>
+    <string name="material_email">&#xf15a;</string>
+    <string name="material_messages">&#xf15a;</string>
+</resources>

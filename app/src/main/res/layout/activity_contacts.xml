@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="contactsViewModel"
+            type="com.farissyariati.gojektest.viewmodel.ContactsViewModel"/>
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="15dp"
+        android:orientation="vertical">
+        <ProgressBar
+            android:id="@+id/progress_people"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:visibility="@{contactsViewModel.contactProgressState}"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:visibility="@{contactsViewModel.scrollLayoutState}">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <RelativeLayout
+                    android:id="@+id/layout_favourite_contact"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="40dp">
+
+                    <TextView
+                        android:id="@+id/label_star"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/material_star"
+                        android:textSize="40sp"
+                        android:textColor="@color/materialLimeGreen"
+                        app:typeface="@{contactsViewModel.context}"
+                        android:layout_marginTop="10dp" />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/list_favorite_contact"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_toEndOf="@id/label_star"
+                        android:clipToPadding="false"
+                        android:scrollbars="vertical"
+                        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                        tools:listitem="@layout/item_contact"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/layout_all_contact"
+                    android:layout_below="@id/layout_favourite_contact"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="40dp">
+
+                    <TextView
+                        android:id="@+id/label_letter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/name_anchor"
+                        android:layout_marginTop="15dp"
+                        android:textSize="30sp" />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/list_all_contact"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="32dp"
+                        android:layout_toEndOf="@id/label_letter"
+                        android:clipToPadding="false"
+                        android:scrollbars="vertical"
+                        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                        tools:listitem="@layout/item_contact"/>
+                </RelativeLayout>
+            </RelativeLayout>
+        </android.support.v4.widget.NestedScrollView>
+    </RelativeLayout>
+</layout>

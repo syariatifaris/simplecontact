@@ -1,0 +1,45 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="contactItemViewModel"
+            type="com.farissyariati.gojektest.viewmodel.ContactItemViewModel"/>
+    </data>
+
+    <LinearLayout
+        android:id="@+id/item_contact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:onClick="@{contactItemViewModel::onItemClick}"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <com.farissyariati.gojektest.view.widget.CircularTextView
+            android:id="@+id/label_initial"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:text="@{contactItemViewModel.initialLetter}"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:padding="3dp"
+            android:textColor="@android:color/white"
+            tools:text="@string/name_anchor"
+            app:dynamicText="@{contactItemViewModel.context}"/>
+
+        <TextView
+            android:id="@+id/label_full_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="@{contactItemViewModel.fullName}"
+            android:textColor="@color/blackTransparent87"
+            android:textSize="14sp"
+            tools:text="@string/default_user_full_name"/>
+
+    </LinearLayout>
+
+
+</layout>
